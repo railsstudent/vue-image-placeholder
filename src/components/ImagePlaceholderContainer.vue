@@ -2,8 +2,8 @@
 import { ref, computed, watchEffect } from 'vue';
 import ImagePlaceholderForm from './ImagePlaceholderForm.vue';
 
-const text = ref('Model');
-const width = ref(400);
+const text = ref('Reactivity');
+const width = ref(250);
 const height = ref(120);
 const color = ref('#fff');
 const backgroundColor = ref('#000');
