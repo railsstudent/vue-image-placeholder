@@ -14,8 +14,9 @@ const url = computed(() => {
   const encText = text.value ? encodeURIComponent(text.value) : `${w} x ${h}`;
   const encColor = encodeURIComponent(color.value);
   const encBackground = encodeURIComponent(backgroundColor.value);
+  const baseUrl = 'https://via.assets.so/img.jpg';
 
-  return `https://via.assets.so/img.jpg?w=${w}&h=${h}&tc=${encColor}&bg=${encBackground}&t=${encText}`;
+  return `${baseUrl}?w=${w}&h=${h}&tc=${encColor}&bg=${encBackground}&t=${encText}`;
 });
 </script>
 
@@ -33,7 +34,12 @@ const url = computed(() => {
 </template>
 
 <style scoped>
+p {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 img {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 </style>

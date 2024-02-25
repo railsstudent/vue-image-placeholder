@@ -48,6 +48,7 @@ h3 {
 }
 
 div.container {
+  width: 50%;
   padding: 0.5rem;
   border: 1px solid black;
   border-radius: 12px;
