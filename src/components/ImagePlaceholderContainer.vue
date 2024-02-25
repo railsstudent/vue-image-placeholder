@@ -28,6 +28,7 @@ const url = computed(() => {
     v-model:backgroundColor="backgroundColor"
   >
   </ImagePlaceholderForm>
+  <p>Url: {{ url }}</p>
   <img :src="url" alt="Image Placeholder" />
 </template>
 
