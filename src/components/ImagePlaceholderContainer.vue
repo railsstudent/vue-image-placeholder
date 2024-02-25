@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watchEffect } from 'vue';
 import ImagePlaceholderForm from './ImagePlaceholderForm.vue';
 
 const text = ref('Model');
@@ -14,10 +14,18 @@ const url = computed(() => {
   const encText = text.value ? encodeURIComponent(text.value) : `${w} x ${h}`;
   const encColor = encodeURIComponent(color.value);
   const encBackground = encodeURIComponent(backgroundColor.value);
-  const baseUrl = 'https://via.assets.so/img.jpg';
 
-  return `${baseUrl}?w=${w}&h=${h}&tc=${encColor}&bg=${encBackground}&t=${encText}`;
+  return `https://via.assets.so/img.jpg?w=${w}&h=${h}&tc=${encColor}&bg=${encBackground}&t=${encText}`;
 });
+
+watchEffect(() => {
+  console.log('New text', text.value);
+  console.log('New width', width.value);
+  console.log('New height', height.value);
+  console.log('New color', color.value);
+  console.log('New background color', backgroundColor.value);
+});
+
 </script>
 
 <template>
